@@ -7,7 +7,7 @@ A Mathieu Nebra tribute page, co-creator of OpenClassRooms, as a [Free Code Camp
 ![Tribute Page](./art/tribute_page_iPhoneXS.gif)
 
 
-##Responsive design
+## Responsive design
 
 ![Tribute Page Responsive](./art/tribute_page_responsive.gif)
 
