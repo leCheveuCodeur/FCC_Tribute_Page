@@ -1,0 +1,290 @@
+/*! SMACSS method
+/*!---------------------------------------!*/
+
+/** BASE: color - background - font
+/**====================================*/
+body {
+  font-size: 14px;
+  line-height: 24px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  background-color: #fff;
+}
+h1,
+h2 {
+  letter-spacing: -1px;
+  color: #7451eb;
+}
+h1 {
+  font-size: 4em;
+  letter-spacing: -5px;
+  line-height: 0.8em;
+}
+h1 + p {
+  font-style: italic;
+  font-size: 1.2em;
+  margin: 0 1em;
+}
+
+figcaption {
+  color: white;
+  font-size: 3em;
+  line-height: 0.9em;
+}
+
+figcaption span {
+  font-size: 0.3em;
+  font-style: italic;
+}
+
+.source {
+  font-size: 0.8em;
+}
+/** LAYOUT: Layout management
+/**====================================*/
+#title {
+  text-align: center;
+}
+
+figure {
+  width: 100%;
+  margin: 30px auto;
+  position: relative;
+}
+
+img {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+}
+
+figcaption {
+  position: absolute;
+  top: 25%;
+  left: 5%;
+  width: 60%;
+}
+
+figcaption span {
+  text-align: right;
+}
+
+.info {
+  width: 70%;
+  margin: 6em auto;
+  padding: 2em;
+  border: 2px dashed #7451eb;
+  /* box-shadow: 0 0 8px 1px rgba(218, 218, 218, 0.5); */
+  border-radius: 15px;
+}
+
+.source {
+  margin: 3em 1em 1em 0;
+  text-align: end;
+}
+/** MODULE: Management of all modular elements
+/**====================================*/
+/*-----Timeline wrapper-----*/
+.timeline {
+  background-color: #fff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: auto;
+}
+
+/*-----Central line-----*/
+.timeline::after {
+  top: 2px;
+  bottom: 15px;
+  position: absolute;
+  content: "";
+  width: 3px;
+  background-color: rgba(218, 218, 218, 0.5);
+  left: calc(50% - 1.5px);
+  height: 100%;
+}
+
+/*-----Content-----*/
+.timeline-item {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  padding-right: 30px;
+  position: relative;
+  margin: 10px 0;
+  width: calc(50% - 30px);
+}
+
+.timeline-item:nth-child(odd) {
+  align-self: flex-end;
+  padding-left: 30px;
+  padding-right: 0;
+}
+
+.timeline-item-desc {
+  text-align: right;
+  position: relative;
+}
+
+.timeline-item:nth-child(odd) .timeline-item-desc {
+  text-align: left;
+}
+
+.timeline-item-desc::before {
+  content: "";
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 2px,
+    rgba(243, 243, 243, 0.5) 3px,
+    rgba(218, 218, 218, 0.5) 5px
+  );
+  position: absolute;
+  left: calc(100% + 57px);
+  width: 100%;
+  height: 100%;
+}
+
+.timeline-item:nth-child(odd) .timeline-item-desc::before {
+  right: calc(100% + 57px);
+  left: auto;
+}
+
+.timeline_toBeContinued{
+  margin: 2em;
+  text-align: center;
+}
+
+/*-----Circle-----*/
+.timeline h2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: right;
+}
+.timeline-item:nth-child(odd) h2 {
+  text-align: left;
+}
+
+.timeline-item h2::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border: 4px solid #7451eb;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px white;
+  background-color: white;
+  position: absolute;
+  left: calc(100% - 7.5px);
+  z-index: 1;
+}
+.timeline-item:nth-child(odd) h2::before {
+  left: -8.5px;
+}
+
+/*-----Date-----*/
+.timeline-item-date {
+  width: 80%;
+  position: absolute;
+  left: calc(100% + 30px);
+  text-align: left;
+  font-size: 0.6em;
+}
+.timeline-item:nth-child(odd) .timeline-item-date {
+  text-align: right;
+  left: auto;
+  right: calc(100% + 30px);
+}
+
+/** STATE: Status Management
+/**====================================*/
+a:visited {
+  color: #7451eb;
+}
+
+/*-----@Media-----*/
+@media only screen and (max-width: 767px) {
+  figure {
+    width: 100%;
+  }
+
+  .info {
+    margin: 2em auto;
+  }
+
+  .timeline {
+    width: 95%;
+  }
+  .timeline::after {
+    left: calc(20% - 1.5px);
+  }
+
+  .timeline-item {
+    align-self: flex-end;
+    padding-left: 30px;
+    padding-right: 0;
+    width: calc(80% - 30px);
+  }
+  .timeline-item-desc {
+    text-align: left;
+  }
+  .timeline-item-desc::before {
+    right: calc(100% + 57px);
+    left: auto;
+    content: none;
+  }
+  .timeline-item h2 {
+    text-align: left;
+  }
+  .timeline-item h2::before {
+    left: -8.5px;
+  }
+  .timeline-item-date {
+    left: auto;
+  }
+  .timeline-item-date,
+  .timeline-item:nth-child(odd) .timeline-item-date {
+    width: 16%;
+    height: auto;
+    right: calc(100% + 30px);
+    text-align: end;
+  }
+}
+
+@media only screen and (max-width: 605px) {
+  figcaption {
+    font-size: 1.8em;
+  }
+  figcaption span {
+    font-size: 0.38em;
+  }
+}
+
+@media only screen and (max-width: 479px) {
+  .timeline::after {
+    left: calc(10% - 1.5px);
+  }
+  .timeline-item {
+    width: calc(90% - 30px);
+  }
+  .timeline-item-date,
+  .timeline-item:nth-child(odd) .timeline-item-date {
+    display: table;
+    position: relative;
+    clear: both;
+    left: 0;
+    text-align: left;
+    width: auto;
+    top: -4px;
+  }
+  .timeline h2 {
+    justify-content: start;
+  }
+}
+/** THEME: Basic Layout Modifications after action
+/**====================================*/
+
+/**SHAME: All unclassified tweaks
+/**====================================*/
