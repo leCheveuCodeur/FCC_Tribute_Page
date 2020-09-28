@@ -4,11 +4,12 @@ A Mathieu Nebra tribute page, co-creator of OpenClassRooms, as a [Free Code Camp
 
 ## Mobile Screen
 
-![Tribute Page] (./art/tribute_page_iPhoneXS.gif)
+![Tribute Page](./art/tribute_page_iPhoneXS.gif)
+
 
 ##Responsive design
 
-![Tribute Page Responsive] (./art/tribute_page_responsive.gif)
+![Tribute Page Responsive](./art/tribute_page_responsive.gif)
 
 # Prerequisites
 You'll need a working text editor to read this document.
